@@ -22,7 +22,7 @@ a {
   text-decoration: none;
 }
 
-.hero {
+
   // This is where the bulk of the SCSS styling needs to be done
 
   // Take a look at the other files we've built already. How can they be useful here?
@@ -31,7 +31,32 @@ a {
   // 1. $variables
   // 2. nesting (dont forget about the ampersand (&) parent selector!)
   // 3. At-Rules
-}
+  .hero {
+    // Center the content using a flexbox mixin from utilities
+    @include utilities.flex-center;
+    flex-direction: column;
+    background: config.$secondary-color;
+    color: white;
+    padding: 2rem;
+  
+    .hero-content {
+      text-align: center;
+  
+      h1 {
+        margin-bottom: 1.5rem;
+      }
+  
+      p {
+        margin-bottom: 1.5rem;
+      }
+  
+      button {
+        @include btnConfig.btn-style(white, config.$primary-color);
+      }
+    }
+  }
+  
+
 
 // This code is related to some of the aspects of SCSS we have yet to cover.
 // While you don't have to mess with it, it would be advisable to attempt to understand its functionality.
